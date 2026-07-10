@@ -2,62 +2,62 @@ const CardData = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600",
-    title: "Aspen",
-    category: "Travel",
+      "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?w=600",
+    title: "Modern Sofa",
+    category: "Living Room",
     description:
-      "Explore breathtaking mountains and enjoy unforgettable hiking experiences.",
-    price: "$199",
+      "Comfortable and stylish modern sofa with premium fabric upholstery.",
+    price: "$899",
   },
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1493246318656-5bfd4cfb29b8?w=600",
-    title: "Alpine",
-    category: "Vacation",
+      "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?w=600",
+    title: "Dining Table Set",
+    category: "Dining",
     description:
-      "Relax on crystal-clear beaches with amazing sunset views.",
-    price: "$249",
+      "Elegant wooden dining table with matching chairs for 6 people.",
+    price: "$1,299",
   },
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=600",
-    title: "Red Woods",
-    category: "Nature",
+      "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?w=600",
+    title: "Executive Office Chair",
+    category: "Office",
     description:
-      "Reconnect with nature through peaceful camping adventures.",
-    price: "$149",
+      "Premium office chair with ergonomic design for maximum comfort.",
+    price: "$499",
   },
   {
-    id: 3,
+    id: 4,
     image:
-      "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=600",
-    title: "Red Woods",
-    category: "Nature",
+      "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?w=600",
+    title: "Queen Bed Frame",
+    category: "Bedroom",
     description:
-      "Reconnect with nature through peaceful camping adventures.",
-    price: "$149",
+      "Solid wood queen bed frame with upholstered headboard.",
+    price: "$699",
   },
   {
-    id: 3,
+    id: 5,
     image:
-      "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=600",
-    title: "Red Woods",
-    category: "Nature",
+      "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?w=600",
+    title: "Coffee Table",
+    category: "Living Room",
     description:
-      "Reconnect with nature through peaceful camping adventures.",
-    price: "$149",
+      "Modern glass and wood coffee table perfect for any living space.",
+    price: "$299",
   },
   {
-    id: 3,
+    id: 6,
     image:
-      "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=600",
-    title: "Red Woods",
-    category: "Nature",
+      "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?w=600",
+    title: "Wooden Bookshelf",
+    category: "Storage",
     description:
-      "Reconnect with nature through peaceful camping adventures.",
-    price: "$149",
+      "5-tier wooden bookshelf with solid construction and elegant design.",
+    price: "$399",
   },
 ];
 

@@ -2,51 +2,61 @@
 
 export default function ContactPage() {
   return (
-    <section className="contact">
-      <div className="contact-container">
-
-        <div className="contact-info">
-          <h2>Get in Touch</h2>
-
-          <p>
-            We'd love to hear from you. Whether you have a question,
-            feedback, or want to work together, feel free to contact us.
-          </p>
-
-          <div className="info-box">
-            <h4>📍 Address</h4>
-            <p>New Delhi, India</p>
-          </div>
-
-          <div className="info-box">
-            <h4>📧 Email</h4>
-            <p>hello@example.com</p>
-          </div>
-
-          <div className="info-box">
-            <h4>📞 Phone</h4>
-            <p>+91 9876543210</p>
-          </div>
+    <>
+      <section className="contact-hero">
+        <div className="contact-hero-content">
+          <h1>Get in Touch With Us</h1>
+          <p>We're here to help and answer any question you might have</p>
         </div>
+      </section>
 
-        <form className="contact-form">
-          <h2>Send Message</h2>
+      <section className="contact">
+        <div className="contact-container">
 
-          <input type="text" placeholder="Your Name" />
+          <div className="contact-info">
+            <h2>Contact Information</h2>
 
-          <input type="email" placeholder="Your Email" />
+            <p>
+              Have questions about our furniture? Need design advice? Or just want to say hello? 
+              We'd love to hear from you. Reach out using any of the methods below.
+            </p>
 
-          <input type="text" placeholder="Subject" />
+            <div className="info-box">
+              <h4>📍 Address</h4>
+              <p>New Delhi, India</p>
+            </div>
 
-          <textarea
-            rows="6"
-            placeholder="Write your message..."
-          ></textarea>
+            <div className="info-box">
+              <h4>📧 Email</h4>
+              <p>hello@example.com</p>
+            </div>
 
-          <button type="submit">Send Message</button>
-        </form>
+            <div className="info-box">
+              <h4>📞 Phone</h4>
+              <p>+91 9876543210</p>
+            </div>
+          </div>
 
-      </div>
-    </section>
+          <form className="contact-form">
+            <h2>Send us a Message</h2>
+
+            <input type="text" placeholder="Your Name" required />
+
+            <input type="email" placeholder="Your Email" required />
+
+            <input type="text" placeholder="Subject" required />
+
+            <textarea
+              rows="6"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+
+        </div>
+      </section>
+    </>
   );
 }

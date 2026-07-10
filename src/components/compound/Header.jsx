@@ -1,14 +1,14 @@
-
-// import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 
 function Header() {
-  //  const navigate = useNavigate();
+  const { cartCount } = useCart();
 
   const handleLogout = () => {
     localStorage.clear()
     window.location.reload(true);
-    // navigate("/login")
   }
+  
   return (
     <header className="header">
       <div className="logo">
@@ -20,14 +20,20 @@ function Header() {
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/woods">Woods</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/faq">FAQ</a></li>
           <li><a href="/contact">Contact</a></li>
+          {localStorage.getItem('token') ? <li><a href="/account">Account</a></li> : ""}
           {localStorage.getItem('token') ? <li><a href="/cms">CMS</a></li> : <li><a href="/login">Login</a></li>}
-
-
         </ul>
       </nav>
-      {localStorage.getItem('token') ? <button className="btn" onClick={() => handleLogout()}>Logout</button> : ""}
 
+      <Link to="/cart" className="cart-icon">
+        🛒
+        {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+      </Link>
+
+      {localStorage.getItem('token') ? <button className="btn" onClick={() => handleLogout()}>Logout</button> : ""}
     </header>
   );
 }
