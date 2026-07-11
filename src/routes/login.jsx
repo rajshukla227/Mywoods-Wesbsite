@@ -12,7 +12,7 @@ const Login = () => {
 
     // Configure axios with timeout
     const axiosInstance = axios.create({
-        baseURL: "http://localhost:5000",
+        baseURL: "/api",
         timeout: 5000,
         headers: {
             "Content-Type": "application/json"
@@ -34,9 +34,9 @@ const Login = () => {
             const errorMsg = error.code === 'ECONNABORTED' 
                 ? "Connection timeout - Backend server is not responding" 
                 : error.message === 'Network Error'
-                ? "Network Error - Make sure backend is running on port 5000"
+                ? "Network Error - Make sure backend server is running and accessible"
                 : error.message;
-            alert("Backend is not running!\n\nError: " + errorMsg + "\n\nPlease start the backend server first.");
+            alert("Backend is not running!\n\nError: " + errorMsg + "\n\nPlease ensure the backend server or function is running.");
             setLoading(false);
         }
     };
@@ -75,7 +75,7 @@ const Login = () => {
             if (error.code === 'ECONNABORTED') {
                 errorMsg = "Connection timeout - Backend server is not responding";
             } else if (error.message === 'Network Error' || !error.response) {
-                errorMsg = "Network Error - Backend server is not running on http://localhost:5000";
+                errorMsg = "Network Error - Backend server is not reachable";
             } else if (error.response?.data?.message) {
                 errorMsg = error.response.data.message;
             } else if (error.response?.status) {
@@ -145,3 +145,6 @@ const Login = () => {
 };
 
 export default Login;
+
+
+

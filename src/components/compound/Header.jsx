@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <h2>Mywoods</h2>
+        <h2>The Grand Oak</h2>
       </div>
 
       <nav>

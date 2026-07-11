@@ -5,7 +5,7 @@ const app = express();
 
 // Configure CORS properly
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: true,
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"]
@@ -57,8 +57,12 @@ app.use((err, req, res, next) => {
     });
 });
 
-const PORT = 5000;
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`\n✅ Backend Server Started on http://localhost:${PORT}`);
-    console.log(`📝 Use credentials - Email: admin@gmail.com, Password: 123456\n`);
-});
+const PORT = process.env.PORT || 5000;
+if (require.main === module) {
+    app.listen(PORT, "0.0.0.0", () => {
+        console.log(`\n✅ Backend Server Started on http://localhost:${PORT}`);
+        console.log(`📝 Use credentials - Email: admin@gmail.com, Password: 123456\n`);
+    });
+}
+
+module.exports = app;
