@@ -51,21 +51,22 @@ const Login = () => {
 
         setLoading(true);
         try {
-            const response = await axiosInstance.post("/login", {
+            const response = await axiosInstance.post("/auth/login", {
                 email: email,
                 password: password,
             });
 
             console.log("Login response:", response.data);
 
-            if (response.data.success) {
-                alert("Login Successful: " + response.data.message);
+            if (response.data && response.data.token) {
+                localStorage.setItem("token", response.data.token);
+                alert("Login Successful: Welcome " + (response.data.name || "Admin"));
                 setEmail("");
                 setPassword("");
                 setLoading(false);
                 navigate("/cms");
             } else {
-                alert("Login Failed: " + response.data.message);
+                alert("Login Failed: Token not returned");
                 setLoading(false);
             }
         } catch (error) {
@@ -76,6 +77,8 @@ const Login = () => {
                 errorMsg = "Connection timeout - Backend server is not responding";
             } else if (error.message === 'Network Error' || !error.response) {
                 errorMsg = "Network Error - Backend server is not reachable";
+            } else if (error.response?.data?.error) {
+                errorMsg = error.response.data.error;
             } else if (error.response?.data?.message) {
                 errorMsg = error.response.data.message;
             } else if (error.response?.status) {
